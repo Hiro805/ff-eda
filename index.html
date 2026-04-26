@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF-EDA | Expert Digital & Interactive Lab</title>
+    <meta name="description" content="Création de sites premium, branding haut de gamme et acquisition clients.">
+    <meta name="theme-color" content="#020617">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: white;
+            scroll-behavior: smooth;
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        /* Games Styling */
+        
+        .game-card {
+            background: rgba(31, 41, 55, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        
+        .playing-card {
+            width: 120px;
+            height: 180px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            position: relative;
+            color: #1f2937;
+            margin: 10px auto;
+        }
+        
+        .playing-card::before,
+        .playing-card::after {
+            content: attr(data-value);
+            position: absolute;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .playing-card::before {
+            top: 10px;
+            left: 10px;
+        }
+        
+        .playing-card::after {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 glass-card border-b border-white/5 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter">
+                <span class="text-sky-500">FF</span><span class="text-white">-EDA</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#accueil" class="hover:text-sky-400 transition-colors">ACCUEIL</a>
+                <a href="#services" class="hover:text-sky-400 transition-colors">SERVICES</a>
+                <a href="#about" class="hover:text-sky-400 transition-colors">À PROPOS</a>
+                <a href="#interactive" class="hover:text-sky-400 transition-colors">LAB</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">CONTACT</a>
+            </div>
+            <a href="#contact" class="bg-sky-600 hover:bg-sky-500 px-6 py-2 rounded-lg text-sm font-bold transition">PROJET</a>
+        </div>
+    </nav>
+
+    <header id="accueil" class="pt-40 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-sky-500 font-bold tracking-widest text-sm uppercase mb-4 block">Expert Digital</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Sites web <br><span class="text-sky-500">premium.</span></h1>
+            <p class="text-gray-400 text-lg mb-8">UX design, performance et acquisition client.</p>
+            <div class="flex gap-4">
+                <a href="#contact" class="bg-sky-600 px-8 py-4 rounded-md font-bold hover:bg-sky-500 transition">Devis gratuit</a>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-sky-500 font-bold text-2xl mb-1">SEO</div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">Optimisé</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-sky-500 font-bold text-2xl mb-1">RGPD</div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">Conforme</div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Nos Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-8 rounded-2xl border-t-4 border-sky-500">
+                    <h3 class="text-xl font-bold mb-4">DÉVELOPPEMENT WEB</h3>
+                    <p class="text-gray-400 mb-6">Sites vitrines et E-commerce ultra-rapides optimisés pour la conversion.</p>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li>• Responsive Design</li>
+                        <li>• Performance Core Web Vitals</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-2xl border-t-4 border-yellow-500">
+                    <h3 class="text-xl font-bold mb-4">DESIGN & BRANDING</h3>
+                    <p class="text-gray-400 mb-6">Identités visuelles fortes et interfaces UI/UX modernes et intuitives.</p>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li>• Logos & Chartes</li>
+                        <li>• Maquettes Haute Fidélité</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-2xl border-t-4 border-emerald-500">
+                    <h3 class="text-xl font-bold mb-4">STRATÉGIE DIGITALE</h3>
+                    <p class="text-gray-400 mb-6">Audit, cybersécurité et pilotage de projet en mode Agile (Scrum).</p>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li>• Gestion de Projet</li>
+                        <li>• Acquisition Clients</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="interactive" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Interactive Lab</h2>
+                <p class="text-gray-400">Démonstrations techniques et algorithmiques.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="game-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="font-bold text-sky-400">PONG ARCADE</h4>
+                        <button onclick="toggleMute('pong')" class="text-gray-400"><i id="pong-mute-icon" class="fas fa-volume-up"></i></button>
+                    </div>
+                    <canvas id="pong-canvas" width="300" height="200" class="w-full bg-black rounded-lg border border-white/10"></canvas>
+                    <div class="flex justify-between items-center mt-4">
+                        <span id="pong-score" class="font-mono">0 - 0</span>
+                        <button id="pong-start" class="bg-sky-600 px-4 py-2 rounded text-xs font-bold">START / PAUSE</button>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="font-bold text-yellow-400">TETRIS NEON</h4>
+                        <span id="tetris-score" class="text-yellow-400 font-bold">0</span>
+                    </div>
+                    <canvas id="tetris-canvas" width="200" height="320" class="mx-auto bg-black rounded-lg border border-white/10"></canvas>
+                    <button id="tetris-start" class="w-full mt-4 bg-yellow-600 py-2 rounded text-xs font-bold text-black">JOUER</button>
+                </div>
+
+                <div class="game-card">
+                    <h4 class="font-bold text-emerald-400 mb-4 text-center">CARDS MASTER</h4>
+                    <div id="current-card" class="playing-card" data-value="A">♠</div>
+                    <div class="flex gap-2 mt-4">
+                        <button onclick="cards.guess(true)" class="flex-1 bg-emerald-600 py-3 rounded-lg font-bold text-xs uppercase">Plus Haut</button>
+                        <button onclick="cards.guess(false)" class="flex-1 bg-red-600 py-3 rounded-lg font-bold text-xs uppercase">Plus Bas</button>
+                    </div>
+                    <div class="text-center mt-4 text-xs">
+                        Série: <span id="card-streak">0</span> | Record: <span id="card-best">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 max-w-5xl mx-auto px-6">
+        <div class="glass-card rounded-3xl overflow-hidden grid md:grid-cols-2">
+            <div class="p-10 bg-sky-900/20">
+                <h2 class="text-3xl font-bold mb-6">Un projet ?</h2>
+                <p class="text-gray-400 mb-8">Réponse garantie sous 24h pour discuter de vos ambitions digitales.</p>
+                <div class="space-y-4 text-sm">
+                    <p>📍 France / Remote</p>
+                    <p>📧 contact@ffeda.fr</p>
+                </div>
+            </div>
+            <div class="p-10 bg-white">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Nom" class="w-full p-4 rounded-xl bg-gray-100 text-gray-900 outline-none focus:ring-2 focus:ring-sky-500">
+                    <input type="email" placeholder="Email" class="w-full p-4 rounded-xl bg-gray-100 text-gray-900 outline-none focus:ring-2 focus:ring-sky-500">
+                    <textarea rows="3" placeholder="Votre message" class="w-full p-4 rounded-xl bg-gray-100 text-gray-900 outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                    <button class="w-full bg-sky-600 text-white font-bold py-4 rounded-xl hover:bg-sky-700 transition">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-xs text-gray-500">
+        <p>© 2026 | <span class="text-sky-500">FF</span>-EDA Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // --- AUDIO ENGINE ---
+        const sounds = {
+            pong: {
+                muted: false,
+                volume: 0.3
+            },
+            cards: {
+                muted: false,
+                volume: 0.4
+            }
+        };
+
+        function toggleMute(game) {
+            sounds[game].muted = !sounds[game].muted;
+            document.getElementById(`${game}-mute-icon`).className = sounds[game].muted ? 'fas fa-volume-mute text-red-500' : 'fas fa-volume-up';
+        }
+
+        // --- PONG ENGINE ---
+        const pong = {
+            canvas: document.getElementById('pong-canvas'),
+            ctx: document.getElementById('pong-canvas').getContext('2d'),
+            ball: {
+                x: 150,
+                y: 100,
+                dx: 3,
+                dy: 3,
+                rad: 5
+            },
+            p1: {
+                y: 75,
+                score: 0
+            },
+            p2: {
+                y: 75,
+                score: 0
+            },
+            paddleH: 40,
+            paddleW: 8,
+            running: false,
+            init() {
+                this.canvas.addEventListener('mousemove', e => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    this.p1.y = e.clientY - rect.top - this.paddleH / 2;
+                });
+                document.getElementById('pong-start').onclick = () => this.running = !this.running;
+                this.loop();
+            },
+            update() {
+                if (!this.running) return;
+                this.ball.x += this.ball.dx;
+                this.ball.y += this.ball.dy;
+                if (this.ball.y < 0 || this.ball.y > this.canvas.height) this.ball.dy *= -1;
+                // AI
+                this.p2.y += (this.ball.y - (this.p2.y + this.paddleH / 2)) * 0.1;
+                // Collisions
+                if (this.ball.x < 15 && this.ball.y > this.p1.y && this.ball.y < this.p1.y + this.paddleH) this.ball.dx *= -1.1;
+                if (this.ball.x > 285 && this.ball.y > this.p2.y && this.ball.y < this.p2.y + this.paddleH) this.ball.dx *= -1.1;
+                // Score
+                if (this.ball.x < 0) {
+                    this.p2.score++;
+                    this.reset();
+                }
+                if (this.ball.x > 300) {
+                    this.p1.score++;
+                    this.reset();
+                }
+                document.getElementById('pong-score').innerText = `${this.p1.score} - ${this.p2.score}`;
+            },
+            reset() {
+                this.ball = {
+                    x: 150,
+                    y: 100,
+                    dx: 3,
+                    dy: 3,
+                    rad: 5
+                };
+            },
+            draw() {
+                this.ctx.fillStyle = "black";
+                this.ctx.fillRect(0, 0, 300, 200);
+                this.ctx.fillStyle = "#38bdf8";
+                this.ctx.fillRect(5, this.p1.y, this.paddleW, this.paddleH);
+                this.ctx.fillRect(287, this.p2.y, this.paddleW, this.paddleH);
+                this.ctx.beginPath();
+                this.ctx.arc(this.ball.x, this.ball.y, this.ball.rad, 0, Math.PI * 2);
+                this.ctx.fill();
+            },
+            loop() {
+                this.update();
+                this.draw();
+                requestAnimationFrame(() => this.loop());
+            }
+        };
+
+        // --- TETRIS ENGINE ---
+        const tetris = {
+            canvas: document.getElementById('tetris-canvas'),
+            ctx: document.getElementById('tetris-canvas').getContext('2d'),
+            grid: Array.from({
+                length: 20
+            }, () => Array(10).fill(0)),
+            score: 0,
+            colors: [null, '#38bdf8', '#fbbf24', '#34d399', '#f87171', '#a78bfa', '#fb923c', '#60a5fa'],
+            piece: null,
+            init() {
+                const shapes = 'IJLOSTZ';
+                const createPiece = (type) => {
+                    if (type === 'I') return [
+                        [0, 1, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 1, 0, 0]
+                    ];
+                    if (type === 'L') return [
+                        [0, 2, 0],
+                        [0, 2, 0],
+                        [0, 2, 2]
+                    ];
+                    if (type === 'J') return [
+                        [0, 3, 0],
+                        [0, 3, 0],
+                        [3, 3, 0]
+                    ];
+                    if (type === 'O') return [
+                        [4, 4],
+                        [4, 4]
+                    ];
+                    if (type === 'S') return [
+                        [0, 5, 5],
+                        [5, 5, 0],
+                        [0, 0, 0]
+                    ];
+                    if (type === 'T') return [
+                        [0, 6, 0],
+                        [6, 6, 6],
+                        [0, 0, 0]
+                    ];
+                    if (type === 'Z') return [
+                        [7, 7, 0],
+                        [0, 7, 7],
+                        [0, 0, 0]
+                    ];
+                };
+                this.resetPiece = () => {
+                    const t = shapes[Math.floor(Math.random() * shapes.length)];
+                    this.piece = {
+                        pos: {
+                            x: 3,
+                            y: 0
+                        },
+                        matrix: createPiece(t)
+                    };
+                    if (this.collide()) {
+                        this.grid.forEach(r => r.fill(0));
+                        this.score = 0;
+                    }
+                };
+                this.collide = () => {
+                    const [m, o] = [this.piece.matrix, this.piece.pos];
+                    for (let y = 0; y < m.length; ++y) {
+                        for (let x = 0; x < m[y].length; ++x) {
+                            if (m[y][x] !== 0 && (this.grid[y + o.y] && this.grid[y + o.y][x + o.x]) !== 0) return true;
+                        }
+                    }
+                    return false;
+                };
+                this.merge = () => {
+                    this.piece.matrix.forEach((row, y) => {
+                        row.forEach((value, x) => {
+                            if (value !== 0) this.grid[y + this.piece.pos.y][x + this.piece.pos.x] = value;
+                        });
+                    });
+                };
+                this.rotate = () => {
+                    for (let y = 0; y < this.piece.matrix.length; ++y) {
+                        for (let x = 0; x < y; ++x) {
+                            [this.piece.matrix[x][y], this.piece.matrix[y][x]] = [this.piece.matrix[y][x], this.piece.matrix[x][y]];
+                        }
+                    }
+                    this.piece.matrix.forEach(row => row.reverse());
+                };
+                this.drop = () => {
+                    this.piece.pos.y++;
+                    if (this.collide()) {
+                        this.piece.pos.y--;
+                        this.merge();
+                        this.resetPiece();
+                        this.clearLines();
+                    }
+                    this.dropCounter = 0;
+                };
+                this.clearLines = () => {
+                    outer: for (let y = this.grid.length - 1; y > 0; --y) {
+                        for (let x = 0; x < this.grid[y].length; ++x) {
+                            if (this.grid[y][x] === 0) continue outer;
+                        }
+                        const row = this.grid.splice(y, 1)[0].fill(0);
+                        this.grid.unshift(row);
+                        this.score += 10;
+                        ++y;
+                    }
+                    document.getElementById('tetris-score').innerText = this.score;
+                };
+
+                document.getElementById('tetris-start').onclick = () => {
+                    this.resetPiece();
+                    this.update();
+                };
+
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'ArrowLeft') {
+                        this.piece.pos.x--;
+                        if (this.collide()) this.piece.pos.x++;
+                    }
+                    if (e.key === 'ArrowRight') {
+                        this.piece.pos.x++;
+                        if (this.collide()) this.piece.pos.x--;
+                    }
+                    if (e.key === 'ArrowDown') {
+                        this.drop();
+                    }
+                    if (e.key === 'ArrowUp') {
+                        this.rotate();
+                        if (this.collide()) this.rotate();
+                    }
+                });
+
+                this.dropCounter = 0;
+                this.lastTime = 0;
+                this.update = (time = 0) => {
+                    const deltaTime = time - this.lastTime;
+                    this.lastTime = time;
+                    this.dropCounter += deltaTime;
+                    if (this.dropCounter > 1000) this.drop();
+                    this.draw();
+                    requestAnimationFrame(this.update);
+                };
+                this.draw = () => {
+                    this.ctx.fillStyle = '#000';
+                    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                    this.grid.forEach((row, y) => row.forEach((val, x) => {
+                        if (val) {
+                            this.ctx.fillStyle = this.colors[val];
+                            this.ctx.fillRect(x * 20, y * 20, 19, 19);
+                        }
+                    }));
+                    this.piece.matrix.forEach((row, y) => row.forEach((val, x) => {
+                        if (val) {
+                            this.ctx.fillStyle = this.colors[val];
+                            this.ctx.fillRect((x + this.piece.pos.x) * 20, (y + this.piece.pos.y) * 20, 19, 19);
+                        }
+                    }));
+                };
+            }
+        };
+
+        // --- CARDS ENGINE ---
+        const cards = {
+            current: 7,
+            streak: 0,
+            best: 0,
+            guess(higher) {
+                const next = Math.floor(Math.random() * 13) + 1;
+                const win = higher ? next >= this.current : next <= this.current;
+                if (win) {
+                    this.streak++;
+                    if (this.streak > this.best) this.best = this.streak;
+                } else {
+                    this.streak = 0;
+                }
+                this.current = next;
+                this.render();
+            },
+            render() {
+                const el = document.getElementById('current-card');
+                const suits = ['♠', '♣', '♥', '♦'];
+                const val = this.current > 10 ? ['J', 'Q', 'K'][this.current - 11] : (this.current === 1 ? 'A' : this.current);
+                el.innerText = suits[Math.floor(Math.random() * 4)];
+                el.setAttribute('data-value', val);
+                el.style.color = Math.random() > 0.5 ? '#ef4444' : '#1f2937';
+                document.getElementById('card-streak').innerText = this.streak;
+                document.getElementById('card-best').innerText = this.best;
+            }
+        };
+
+        // Init All
+        document.addEventListener('DOMContentLoaded', () => {
+            pong.init();
+            tetris.init();
+            cards.render();
+        });
+    </script>
+</body>
+
+</html>
