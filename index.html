@@ -515,6 +515,38 @@
             cards.render();
         });
     </script>
+
+<script src="js/cookieconsent.js"></script>
+
+<script>
+window.addEventListener("load", function () {
+  if (window.CookieConsent) {
+    CookieConsent.run({
+      categories: {
+        necessary: { enabled: true, readOnly: true },
+        analytics: {}
+      },
+      language: {
+        default: "fr",
+        translations: {
+          fr: {
+            consentModal: {
+              title: "Cookies FF-EDA",
+              description: "Ce site utilise des cookies pour améliorer votre expérience.",
+              acceptAllBtn: "Accepter",
+              acceptNecessaryBtn: "Refuser",
+              showPreferencesBtn: "Préférences"
+            }
+          }
+        }
+      }
+    });
+  }
+});
+</script>
 </body>
 
+
+
 </html>
+
