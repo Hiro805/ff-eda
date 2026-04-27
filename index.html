@@ -3,148 +3,721 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF-EDA | Expert Digital & Interactive Lab</title>
-    <meta name="description" content="Création de sites premium, branding haut de gamme et acquisition clients.">
-    <meta name="theme-color" content="#020617">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FF-EDA V4 ULTIMATE CLEAN</title>
+    <meta name="description" content="FF-EDA portfolio premium - version clean">
+    <meta http-equiv="Content-Security-Policy" content="
+default-src 'self' data: blob: https:;
+img-src 'self' data: https:;
+media-src 'self' blob: https:;
+style-src 'self' 'unsafe-inline' https:;
+script-src 'self' 'unsafe-inline';
+font-src 'self' data: https:;
+connect-src 'self' https:;
+frame-src https://www.youtube.com https://www.youtube-nocookie.com;
+base-uri 'self';
+form-action 'self';
+upgrade-insecure-requests;">
 
     <style>
+         :root {
+            --bg: #07101f;
+            --bg2: #0d1830;
+            --card: #182744;
+            --line: rgba(255, 255, 255, .08);
+            --txt: #fff;
+            --muted: #b8c7da;
+            --blue: #1db7ff;
+            --cyan: #5fe0ff;
+            --green: #14d59d;
+            --orange: #ffba08;
+            --red: #ff5757;
+            --radius: 18px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #020617;
-            color: white;
-            scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #06101f, #08152a, #06101f);
+            color: #fff;
+            overflow-x: hidden;
         }
         
-        .glass-card {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        img {
+            max-width: 100%;
+            display: block
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+        
+        .container {
+            width: min(1240px, calc(100% - 24px));
+            margin: auto
+        }
+        
+        section {
+            padding: 70px 0
+        }
+        
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+        
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px
+        }
+        
+        .card {
+            background: linear-gradient(180deg, #16243d, #1d2d49);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 22px;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 30px
+        }
+        
+        .title h2 {
+            font-size: 34px;
+            margin-bottom: 10px
+        }
+        
+        .title p {
+            color: var(--muted)
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(7, 16, 31, .85);
             backdrop-filter: blur(10px);
-        }
-        /* Games Styling */
-        
-        .game-card {
-            background: rgba(31, 41, 55, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 1px solid var(--line);
         }
         
-        .game-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(56, 189, 248, 0.4);
-        }
-        
-        .playing-card {
-            width: 120px;
-            height: 180px;
-            background: white;
-            border-radius: 12px;
+        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            font-size: 3rem;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 900
+        }
+        
+        .logo span {
+            color: var(--blue)
+        }
+        
+        .menu {
+            display: flex;
+            gap: 18px
+        }
+        
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(7, 16, 31, .45), rgba(7, 16, 31, .75)), url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80') center/cover;
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 14px
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            color: #d9e6f5
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            margin-top: 18px;
+            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            color: #00121f;
+        }
+        
+        .project .imgs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .project img {
+            height: 110px;
+            object-fit: cover;
+            border-radius: 12px;
+            width: 100%;
+        }
+        
+        .project h3 {
+            font-size: 18px;
+            margin-bottom: 8px
+        }
+        
+        .project p {
+            color: var(--muted)
+        }
+        
+        .project button {
+            margin-top: 14px;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 999px;
+            font-weight: 800;
+            background: #ffffff14;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .games {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+        
+        .game {
             position: relative;
-            color: #1f2937;
-            margin: 10px auto;
+            overflow: hidden;
+            min-height: 420px;
+            padding: 16px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, #16243d, #1d2d49);
+            border: 1px solid var(--line);
         }
         
-        .playing-card::before,
-        .playing-card::after {
-            content: attr(data-value);
+        .cover {
             position: absolute;
-            font-size: 1rem;
-            font-weight: bold;
+            inset: 0;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(rgba(7, 16, 31, .45), rgba(7, 16, 31, .82)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80') center/cover;
+            cursor: pointer;
+            transition: .35s;
         }
         
-        .playing-card::before {
-            top: 10px;
-            left: 10px;
+        .game.play .cover {
+            opacity: 0;
+            pointer-events: none
         }
         
-        .playing-card::after {
-            bottom: 10px;
-            right: 10px;
-            transform: rotate(180deg);
+        .game h3 {
+            text-align: center;
+            color: #ffd447;
+            margin-bottom: 8px
+        }
+        
+        .score {
+            text-align: center;
+            font-weight: 800;
+            margin-bottom: 10px
+        }
+        
+        canvas {
+            display: block;
+            width: 100%;
+            height: 220px;
+            background: #09101c;
+            border-radius: 12px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px
+        }
+        
+        .controls button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        
+        .blue {
+            background: var(--blue)
+        }
+        
+        .orange {
+            background: var(--orange)
+        }
+        
+        .green {
+            background: var(--green)
+        }
+        
+        .red {
+            background: var(--red);
+            color: #fff
+        }
+        
+        .gray {
+            background: #ffffff12;
+            color: #fff
+        }
+        
+        input[type=range] {
+            width: 100%;
+            margin-top: 10px
+        }
+        
+        .bigcard {
+            height: 220px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, #dbe7ff);
+            color: #111;
+        }
+        
+        .marketing {
+            background: linear-gradient(rgba(7, 16, 31, .65), rgba(7, 16, 31, .78)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80') center/cover;
+        }
+        
+        footer {
+            background: linear-gradient(180deg, #f4f8ff, #dfeeff);
+            color: #102038;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        footer a {
+            color: #102038;
+            font-weight: 800
+        }
+        
+        .cookie {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 360px;
+            max-width: calc(100% - 24px);
+            background: #fff;
+            color: #111;
+            padding: 18px;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+            z-index: 9999;
+            display: none;
+        }
+        
+        .cookie.show {
+            display: block
+        }
+        
+        .cookie button {
+            width: 100%;
+            margin-top: 8px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .75);
+            display: none;
+            z-index: 9998;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal.show {
+            display: flex
+        }
+        
+        .modalbox {
+            background: #fff;
+            color: #111;
+            max-width: 700px;
+            width: 100%;
+            padding: 24px;
+            border-radius: 18px;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: #ffffff10;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        
+        textarea {
+            min-height: 150px
+        }
+        
+        @media(max-width:980px) {
+            .grid3,
+            .games {
+                grid-template-columns: 1fr
+            }
+            .grid2 {
+                grid-template-columns: 1fr
+            }
+            .hero h1 {
+                font-size: 42px
+            }
+            .menu {
+                display: none
+            }
+        }
+        
+        #contact .grid2 {
+            align-items: stretch;
+        }
+        
+        #contact .grid2 .card:first-child {
+            background: #ffffff !important;
+            color: #102038;
+            border: 1px solid #dbe8f5;
+        }
+        
+        #contact .grid2 .card:last-child {
+            background: #eef6ff !important;
+            color: #102038;
+            border: 1px solid #dbe8f5;
+        }
+        
+        #contact .card h3 {
+            color: #102038;
+        }
+        
+        #contact .card p {
+            color: #42546d;
+        }
+        
+        #contact input,
+        #contact textarea {
+            background: #ffffff;
+            color: #102038;
+            border: 1px solid #d7e4f4;
+        }
+        
+        #contact input::placeholder,
+        #contact textarea::placeholder {
+            color: #6e7f96;
+        }
+        
+        .footer-social {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            margin: 8px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: #0a3f88;
+            color: #fff;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            background: #1db7ff;
+        }
+        /* ============================= */
+        /* FF-EDA RESPONSIVE MASTER     */
+        /* ============================= */
+        /* Tablette */
+        
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 48px;
+                line-height: 1.1;
+            }
+            .hero p {
+                font-size: 17px;
+                max-width: 100%;
+            }
+            .container {
+                width: min(100%, calc(100% - 28px));
+            }
+            .games {
+                grid-template-columns: 1fr 1fr;
+            }
+            .project .imgs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        /* Mobile large */
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 55px 0;
+            }
+            nav {
+                padding: 14px 0;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .logo {
+                font-size: 24px;
+            }
+            .hero {
+                min-height: auto;
+                padding: 70px 0;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 36px;
+                line-height: 1.15;
+            }
+            .hero p {
+                font-size: 16px;
+                margin: auto;
+            }
+            .title h2 {
+                font-size: 28px;
+            }
+            .title p {
+                font-size: 15px;
+            }
+            .grid2,
+            .grid3,
+            .games {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .project .imgs {
+                grid-template-columns: 1fr;
+            }
+            .project img {
+                height: 220px;
+            }
+            .card,
+            .game {
+                padding: 18px;
+            }
+            .bigcard {
+                height: 180px;
+                font-size: 52px;
+            }
+            canvas {
+                height: 240px;
+            }
+            .controls button {
+                min-height: 48px;
+                font-size: 15px;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            footer {
+                padding: 32px 0;
+            }
+            .footer-social a {
+                display: block;
+                margin: 10px auto;
+                max-width: 260px;
+            }
+        }
+        /* Petit mobile */
+        
+        @media (max-width: 480px) {
+            .container {
+                width: calc(100% - 18px);
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .title h2 {
+                font-size: 24px;
+            }
+            .card,
+            .game {
+                padding: 14px;
+                border-radius: 16px;
+            }
+            .project img {
+                height: 180px;
+            }
+            canvas {
+                height: 210px;
+            }
+            .bigcard {
+                height: 150px;
+                font-size: 42px;
+            }
+            .controls {
+                gap: 6px;
+            }
+            .controls button {
+                padding: 12px 8px;
+                font-size: 14px;
+            }
+            .cookie {
+                right: 10px;
+                left: 10px;
+                bottom: 10px;
+                width: auto;
+            }
         }
     </style>
 </head>
 
-<body class="antialiased">
+<body>
 
-    <nav class="fixed w-full z-50 glass-card border-b border-white/5 py-4 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-extrabold tracking-tighter">
-                <span class="text-sky-500">FF</span><span class="text-white">-EDA</span>
-            </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                <a href="#accueil" class="hover:text-sky-400 transition-colors">ACCUEIL</a>
-                <a href="#services" class="hover:text-sky-400 transition-colors">SERVICES</a>
-                <a href="#about" class="hover:text-sky-400 transition-colors">À PROPOS</a>
-                <a href="#interactive" class="hover:text-sky-400 transition-colors">LAB</a>
-                <a href="#contact" class="hover:text-sky-400 transition-colors">CONTACT</a>
-            </div>
-            <a href="#contact" class="bg-sky-600 hover:bg-sky-500 px-6 py-2 rounded-lg text-sm font-bold transition">PROJET</a>
-        </div>
-    </nav>
-
-    <header id="accueil" class="pt-40 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <span class="text-sky-500 font-bold tracking-widest text-sm uppercase mb-4 block">Expert Digital</span>
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Sites web <br><span class="text-sky-500">premium.</span></h1>
-            <p class="text-gray-400 text-lg mb-8">UX design, performance et acquisition client.</p>
-            <div class="flex gap-4">
-                <a href="#contact" class="bg-sky-600 px-8 py-4 rounded-md font-bold hover:bg-sky-500 transition">Devis gratuit</a>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="glass-card p-6 rounded-2xl text-center">
-                <div class="text-sky-500 font-bold text-2xl mb-1">SEO</div>
-                <div class="text-xs text-gray-400 uppercase tracking-widest">Optimisé</div>
-            </div>
-            <div class="glass-card p-6 rounded-2xl text-center">
-                <div class="text-sky-500 font-bold text-2xl mb-1">RGPD</div>
-                <div class="text-xs text-gray-400 uppercase tracking-widest">Conforme</div>
-            </div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><span>FF</span>-EDA</div>
+                <div class="menu">
+                    <a href="#projets">Projets</a>
+                    <a href="#games">Jeux</a>
+                    <a href="#marketing">Marketing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <section id="services" class="py-20 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Nos Services</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-8 rounded-2xl border-t-4 border-sky-500">
-                    <h3 class="text-xl font-bold mb-4">DÉVELOPPEMENT WEB</h3>
-                    <p class="text-gray-400 mb-6">Sites vitrines et E-commerce ultra-rapides optimisés pour la conversion.</p>
-                    <ul class="text-sm space-y-2 text-gray-300">
-                        <li>• Responsive Design</li>
-                        <li>• Performance Core Web Vitals</li>
+    <section class="hero">
+        <div class="container">
+            <h1>FF-EDA V4 Ultimate Clean</h1>
+            <p>Création web premium, branding, SEO, marketing digital, jeux interactifs et identité professionnelle moderne.</p>
+            <a href="#contact" class="btn">Démarrer un projet</a>
+        </div>
+    </section>
+
+
+
+    <!-- ========= 1. SECTION A PROPOS (à placer après HERO) ========= -->
+    <section id="apropos">
+        <div class="container">
+            <div class="title">
+                <h2>À propos de moi</h2>
+                <p>Entrepreneur web autodidacte, orienté résultats et image premium.</p>
+            </div>
+
+            <div class="grid2">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Portrait professionnel" style="width:100%;height:420px;object-fit:cover;border-radius:16px">
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom:14px;">FF - Entrepreneur Digital</h3>
+
+                    <p style="color:#d5e2f1;line-height:1.8">
+                        Passionné par le digital depuis plusieurs années, je développe des projets web modernes, performants et pensés pour convertir.
+                    </p>
+
+                    <p style="color:#d5e2f1;line-height:1.8;margin-top:12px">
+                        Mon approche mélange design premium, stratégie commerciale, référencement naturel, automatisation et image de marque forte.
+                    </p>
+
+                    <p style="color:#d5e2f1;line-height:1.8;margin-top:12px">
+                        Objectif : aider particuliers, indépendants et entreprises à obtenir une présence en ligne crédible, rentable et élégante.
+                    </p>
+
+                    <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+                        <span class="tag">Web Premium</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Branding</span>
+                        <span class="tag">Acquisition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========= 2. SECTION COMPÉTENCES (à placer avant PROJETS) ========= -->
+    <section id="competences">
+        <div class="container">
+            <div class="title">
+                <h2>Mes Compétences</h2>
+                <p>Technologies front-end, back-end et expertise digitale.</p>
+            </div>
+
+            <div class="grid2">
+
+                <div class="card">
+                    <h3 style="margin-bottom:14px;color:#1db7ff;">Front-end</h3>
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Tailwind CSS</li>
                     </ul>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border-t-4 border-yellow-500">
-                    <h3 class="text-xl font-bold mb-4">DESIGN & BRANDING</h3>
-                    <p class="text-gray-400 mb-6">Identités visuelles fortes et interfaces UI/UX modernes et intuitives.</p>
-                    <ul class="text-sm space-y-2 text-gray-300">
-                        <li>• Logos & Chartes</li>
-                        <li>• Maquettes Haute Fidélité</li>
+
+                <div class="card">
+                    <h3 style="margin-bottom:14px;color:#1db7ff;">Back-end</h3>
+                    <ul class="skill-list">
+                        <li>PHP</li>
+                        <li>Node.js</li>
+                        <li>SQL / MySQL</li>
+                        <li>Python</li>
                     </ul>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border-t-4 border-emerald-500">
-                    <h3 class="text-xl font-bold mb-4">STRATÉGIE DIGITALE</h3>
-                    <p class="text-gray-400 mb-6">Audit, cybersécurité et pilotage de projet en mode Agile (Scrum).</p>
-                    <ul class="text-sm space-y-2 text-gray-300">
-                        <li>• Gestion de Projet</li>
-                        <li>• Acquisition Clients</li>
+
+                <div class="card">
+                    <h3 style="margin-bottom:14px;color:#1db7ff;">Marketing</h3>
+                    <ul class="skill-list">
+                        <li>SEO Technique</li>
+                        <li>Copywriting</li>
+                        <li>Tunnel de vente</li>
+                        <li>Acquisition client</li>
                     </ul>
                 </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom:14px;color:#1db7ff;">Business</h3>
+                    <ul class="skill-list">
+                        <li>Branding</li>
+                        <li>Audit digital</li>
+                        <li>UX / Conversion</li>
+                        <li>Gestion projet</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
@@ -153,400 +726,459 @@
 
 
 
-    <section id="interactive" class="py-20 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Interactive Lab</h2>
-                <p class="text-gray-400">Démonstrations techniques et algorithmiques.</p>
+
+
+
+
+    <section id="projets">
+        <div class="container">
+            <div class="title">
+                <h2>Projets Premium</h2>
+                <p>Galeries détaillées et fiches complètes.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="game-card">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="font-bold text-sky-400">PONG ARCADE</h4>
-                        <button onclick="toggleMute('pong')" class="text-gray-400"><i id="pong-mute-icon" class="fas fa-volume-up"></i></button>
+            <div class="grid3">
+
+                <div class="card project">
+                    <div class="imgs">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=600&q=80">
                     </div>
-                    <canvas id="pong-canvas" width="300" height="200" class="w-full bg-black rounded-lg border border-white/10"></canvas>
-                    <div class="flex justify-between items-center mt-4">
-                        <span id="pong-score" class="font-mono">0 - 0</span>
-                        <button id="pong-start" class="bg-sky-600 px-4 py-2 rounded text-xs font-bold">START / PAUSE</button>
+                    <h3>Travel Premium Store</h3>
+                    <p>Boutique voyage immersive, réservation premium, tunnel de conversion optimisé.</p>
+                    <button onclick="openModal('Travel Premium Store : UX haut de gamme, stratégie conversion, e-commerce luxe.')">Voir projet</button>
+                </div>
+
+                <div class="card project">
+                    <div class="imgs">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <h3>Application Blog Pro</h3>
+                    <p>Publication rapide, architecture SEO, dashboard administrateur moderne.</p>
+                    <button onclick="openModal('Application Blog Pro : CMS rapide, optimisation SEO, analytics.')">Voir projet</button>
+                </div>
+
+                <div class="card project">
+                    <div class="imgs">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <h3>Portfolio Artiste</h3>
+                    <p>Image de marque émotionnelle, storytelling visuel et immersion.</p>
+                    <button onclick="openModal('Portfolio Artiste : branding premium, image forte, galerie immersive.')">Voir projet</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section id="games">
+        <div class="container">
+            <div class="title">
+                <h2>Jeux Réels Fonctionnels</h2>
+                <p>Audio, score, reset et gameplay actif.</p>
+            </div>
+
+            <div class="games">
+
+                <!-- Pong -->
+                <div class="game" id="pongWrap">
+                    <div class="cover" onclick="startPong()">PONG ARCADE</div>
+                    <h3>Jeu de Pong</h3>
+                    <div class="score">Score : <span id="pongScore">0</span></div>
+                    <canvas id="pong" width="360" height="220"></canvas>
+                    <div class="controls">
+                        <button class="blue" onclick="startPong()">Jouer</button>
+                        <button class="gray" onclick="pausePong()">Pause</button>
+                        <button class="red" onclick="resetPong()">Reset</button>
+                    </div>
+                    <input id="volume" type="range" min="0" max="1" step="0.01" value="0.25">
+                </div>
+
+                <!-- Tetris -->
+                <div class="game" id="tetWrap">
+                    <div class="cover" onclick="startTetris()">TETRIS NÉON</div>
+                    <h3>Tetris</h3>
+                    <div class="score">Score : <span id="tetScore">0</span></div>
+                    <canvas id="tetris" width="360" height="220"></canvas>
+                    <div class="controls">
+                        <button class="orange" onclick="startTetris()">Jouer</button>
+                        <button class="gray" onclick="moveTet(-20)">◀</button>
+                        <button class="gray" onclick="moveTet(20)">▶</button>
+                        <button class="red" onclick="resetTetris()">Reset</button>
                     </div>
                 </div>
 
-                <div class="game-card">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="font-bold text-yellow-400">TETRIS NEON</h4>
-                        <span id="tetris-score" class="text-yellow-400 font-bold">0</span>
+                <!-- Cards -->
+                <div class="game" id="cardWrap">
+                    <div class="cover" onclick="activateCards()">CARDS MASTER</div>
+                    <h3>Plus ou Moins</h3>
+                    <div class="bigcard" id="cardFace">7</div>
+                    <div class="score">Série : <span id="cardScore">0</span></div>
+                    <div class="controls">
+                        <button class="green" onclick="guessHigh()">Plus Haut</button>
+                        <button class="orange" onclick="guessLow()">Plus Bas</button>
+                        <button class="red" onclick="resetCards()">Reset</button>
                     </div>
-                    <canvas id="tetris-canvas" width="200" height="320" class="mx-auto bg-black rounded-lg border border-white/10"></canvas>
-                    <button id="tetris-start" class="w-full mt-4 bg-yellow-600 py-2 rounded text-xs font-bold text-black">JOUER</button>
                 </div>
 
-                <div class="game-card">
-                    <h4 class="font-bold text-emerald-400 mb-4 text-center">CARDS MASTER</h4>
-                    <div id="current-card" class="playing-card" data-value="A">♠</div>
-                    <div class="flex gap-2 mt-4">
-                        <button onclick="cards.guess(true)" class="flex-1 bg-emerald-600 py-3 rounded-lg font-bold text-xs uppercase">Plus Haut</button>
-                        <button onclick="cards.guess(false)" class="flex-1 bg-red-600 py-3 rounded-lg font-bold text-xs uppercase">Plus Bas</button>
-                    </div>
-                    <div class="text-center mt-4 text-xs">
-                        Série: <span id="card-streak">0</span> | Record: <span id="card-best">0</span>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketing" class="marketing">
+        <div class="container">
+            <div class="title">
+                <h2>Expertise Marketing Digital</h2>
+                <p>Acquisition clients, SEO, conversion, branding.</p>
+            </div>
+            <div class="grid2">
+                <div class="card">SEO stratégique + audit technique + contenu.</div>
+                <div class="card">Campagnes Meta / Google Ads / tunnels premium.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="title">
+                <h2>Contact</h2>
+                <p>Parlons de votre projet.</p>
+            </div>
+
+            <div class="grid2">
+                <div class="card">
+                    <h3>Disponible</h3>
+                    <p style="color:#42546b;margin-top:10px">
+                        Création web, SEO, branding, marketing digital, livraison locale et accompagnement premium.
+                    </p>
+                </div>
+
+                <div class="card" style="background:#ffffff;color:#102038;">
+                    <form>
+                        <input type="text" placeholder="Nom">
+                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="Sujet">
+                        <textarea placeholder="Votre message"></textarea>
+                        <button class="btn" type="submit">Envoyer</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 max-w-5xl mx-auto px-6">
-        <div class="glass-card rounded-3xl overflow-hidden grid md:grid-cols-2">
-            <div class="p-10 bg-sky-900/20">
-                <h2 class="text-3xl font-bold mb-6">Un projet ?</h2>
-                <p class="text-gray-400 mb-8">Réponse garantie sous 24h pour discuter de vos ambitions digitales.</p>
-                <div class="space-y-4 text-sm">
-                    <p>📍 France / Remote</p>
-                    <p>📧 contact@ffeda.fr</p>
-                </div>
-            </div>
-            <div class="p-10 bg-white">
-                <form class="space-y-4">
-                    <input type="text" placeholder="Nom" class="w-full p-4 rounded-xl bg-gray-100 text-gray-900 outline-none focus:ring-2 focus:ring-sky-500">
-                    <input type="email" placeholder="Email" class="w-full p-4 rounded-xl bg-gray-100 text-gray-900 outline-none focus:ring-2 focus:ring-sky-500">
-                    <textarea rows="3" placeholder="Votre message" class="w-full p-4 rounded-xl bg-gray-100 text-gray-900 outline-none focus:ring-2 focus:ring-sky-500"></textarea>
-                    <button class="w-full bg-sky-600 text-white font-bold py-4 rounded-xl hover:bg-sky-700 transition">Envoyer</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <footer>
 
-    <footer class="py-12 border-t border-white/5 text-center text-xs text-gray-500">
-        <p>© 2026 | <span class="text-sky-500">FF</span>-EDA Tous droits réservés.</p>
+        <div class="footer-social">
+            <a href="https://facebook.com/" target="_blank">Facebook</a>
+            <a href="https://tiktok.com/" target="_blank">TikTok</a>
+        </div>
+
+
+
+        <div class="container" style="text-align:center">
+            <a href="#contact">CONTACT</a><br><br> © FF-EDA Ultimate Clean
+        </div>
     </footer>
 
+
+
+
+
+
+
+
+    <!-- modal -->
+    <div class="modal" id="modal">
+        <div class="modalbox">
+            <h3>Détail du projet</h3>
+            <p id="modalText" style="margin-top:10px"></p>
+            <button class="btn" onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
     <script>
-        // --- AUDIO ENGINE ---
-        const sounds = {
-            pong: {
-                muted: false,
-                volume: 0.3
-            },
-            cards: {
-                muted: false,
-                volume: 0.4
+        document.addEventListener("DOMContentLoaded", function() {
+
+            /* ===== Cookies ===== */
+            const cookie = document.getElementById("cookie");
+            if (!localStorage.getItem("ffedaConsent")) {
+                setTimeout(() => cookie.classList.add("show"), 800);
             }
-        };
+            window.acceptCookies = function() {
+                localStorage.setItem("ffedaConsent", "yes");
+                cookie.classList.remove("show");
+            }
+            window.rejectCookies = function() {
+                localStorage.setItem("ffedaConsent", "no");
+                cookie.classList.remove("show");
+            }
 
-        function toggleMute(game) {
-            sounds[game].muted = !sounds[game].muted;
-            document.getElementById(`${game}-mute-icon`).className = sounds[game].muted ? 'fas fa-volume-mute text-red-500' : 'fas fa-volume-up';
-        }
+            /* ===== Modal ===== */
+            window.openModal = function(txt) {
+                document.getElementById("modalText").textContent = txt;
+                document.getElementById("modal").classList.add("show");
+            }
+            window.closeModal = function() {
+                document.getElementById("modal").classList.remove("show");
+            }
 
-        // --- PONG ENGINE ---
-        const pong = {
-            canvas: document.getElementById('pong-canvas'),
-            ctx: document.getElementById('pong-canvas').getContext('2d'),
-            ball: {
-                x: 150,
-                y: 100,
-                dx: 3,
-                dy: 3,
-                rad: 5
-            },
-            p1: {
-                y: 75,
-                score: 0
-            },
-            p2: {
-                y: 75,
-                score: 0
-            },
-            paddleH: 40,
-            paddleW: 8,
-            running: false,
-            init() {
-                this.canvas.addEventListener('mousemove', e => {
-                    const rect = this.canvas.getBoundingClientRect();
-                    this.p1.y = e.clientY - rect.top - this.paddleH / 2;
-                });
-                document.getElementById('pong-start').onclick = () => this.running = !this.running;
-                this.loop();
-            },
-            update() {
-                if (!this.running) return;
-                this.ball.x += this.ball.dx;
-                this.ball.y += this.ball.dy;
-                if (this.ball.y < 0 || this.ball.y > this.canvas.height) this.ball.dy *= -1;
-                // AI
-                this.p2.y += (this.ball.y - (this.p2.y + this.paddleH / 2)) * 0.1;
-                // Collisions
-                if (this.ball.x < 15 && this.ball.y > this.p1.y && this.ball.y < this.p1.y + this.paddleH) this.ball.dx *= -1.1;
-                if (this.ball.x > 285 && this.ball.y > this.p2.y && this.ball.y < this.p2.y + this.paddleH) this.ball.dx *= -1.1;
-                // Score
-                if (this.ball.x < 0) {
-                    this.p2.score++;
-                    this.reset();
+            /* ===== Audio ===== */
+            let audioCtx = null;
+
+            function beep(freq, dur) {
+                try {
+                    audioCtx = audioCtx || new(window.AudioContext || window.webkitAudioContext)();
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    const slider = document.getElementById("volume");
+                    gain.gain.value = slider ? parseFloat(slider.value) : 0.25;
+                    osc.frequency.value = freq;
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + dur);
+                } catch (e) {}
+            }
+
+            /* ===== Pong ===== */
+            const pong = document.getElementById("pong");
+            const pctx = pong.getContext("2d");
+            let paddleY = 80,
+                bx = 180,
+                by = 110,
+                dx = 3,
+                dy = 2,
+                pongRun = false,
+                pScore = 0;
+
+            pong.addEventListener("mousemove", function(e) {
+                const r = pong.getBoundingClientRect();
+                paddleY = e.clientY - r.top - 30;
+            });
+
+            function pongLoop() {
+                if (!pongRun) return;
+
+                pctx.clearRect(0, 0, 360, 220);
+                pctx.fillStyle = "#1db7ff";
+                pctx.fillRect(12, paddleY, 10, 60);
+                pctx.fillRect(338, by - 30, 10, 60);
+
+                pctx.beginPath();
+                pctx.arc(bx, by, 7, 0, Math.PI * 2);
+                pctx.fill();
+
+                bx += dx;
+                by += dy;
+
+                if (by < 7 || by > 213) {
+                    dy = -dy;
+                    beep(650, .05);
                 }
-                if (this.ball.x > 300) {
-                    this.p1.score++;
-                    this.reset();
+                if (bx < 25 && by > paddleY && by < paddleY + 60) {
+                    dx = 3;
+                    pScore++;
+                    beep(900, .05);
                 }
-                document.getElementById('pong-score').innerText = `${this.p1.score} - ${this.p2.score}`;
-            },
-            reset() {
-                this.ball = {
-                    x: 150,
-                    y: 100,
-                    dx: 3,
-                    dy: 3,
-                    rad: 5
-                };
-            },
-            draw() {
-                this.ctx.fillStyle = "black";
-                this.ctx.fillRect(0, 0, 300, 200);
-                this.ctx.fillStyle = "#38bdf8";
-                this.ctx.fillRect(5, this.p1.y, this.paddleW, this.paddleH);
-                this.ctx.fillRect(287, this.p2.y, this.paddleW, this.paddleH);
-                this.ctx.beginPath();
-                this.ctx.arc(this.ball.x, this.ball.y, this.ball.rad, 0, Math.PI * 2);
-                this.ctx.fill();
-            },
-            loop() {
-                this.update();
-                this.draw();
-                requestAnimationFrame(() => this.loop());
-            }
-        };
-
-        // --- TETRIS ENGINE ---
-        const tetris = {
-            canvas: document.getElementById('tetris-canvas'),
-            ctx: document.getElementById('tetris-canvas').getContext('2d'),
-            grid: Array.from({
-                length: 20
-            }, () => Array(10).fill(0)),
-            score: 0,
-            colors: [null, '#38bdf8', '#fbbf24', '#34d399', '#f87171', '#a78bfa', '#fb923c', '#60a5fa'],
-            piece: null,
-            init() {
-                const shapes = 'IJLOSTZ';
-                const createPiece = (type) => {
-                    if (type === 'I') return [
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0]
-                    ];
-                    if (type === 'L') return [
-                        [0, 2, 0],
-                        [0, 2, 0],
-                        [0, 2, 2]
-                    ];
-                    if (type === 'J') return [
-                        [0, 3, 0],
-                        [0, 3, 0],
-                        [3, 3, 0]
-                    ];
-                    if (type === 'O') return [
-                        [4, 4],
-                        [4, 4]
-                    ];
-                    if (type === 'S') return [
-                        [0, 5, 5],
-                        [5, 5, 0],
-                        [0, 0, 0]
-                    ];
-                    if (type === 'T') return [
-                        [0, 6, 0],
-                        [6, 6, 6],
-                        [0, 0, 0]
-                    ];
-                    if (type === 'Z') return [
-                        [7, 7, 0],
-                        [0, 7, 7],
-                        [0, 0, 0]
-                    ];
-                };
-                this.resetPiece = () => {
-                    const t = shapes[Math.floor(Math.random() * shapes.length)];
-                    this.piece = {
-                        pos: {
-                            x: 3,
-                            y: 0
-                        },
-                        matrix: createPiece(t)
-                    };
-                    if (this.collide()) {
-                        this.grid.forEach(r => r.fill(0));
-                        this.score = 0;
-                    }
-                };
-                this.collide = () => {
-                    const [m, o] = [this.piece.matrix, this.piece.pos];
-                    for (let y = 0; y < m.length; ++y) {
-                        for (let x = 0; x < m[y].length; ++x) {
-                            if (m[y][x] !== 0 && (this.grid[y + o.y] && this.grid[y + o.y][x + o.x]) !== 0) return true;
-                        }
-                    }
-                    return false;
-                };
-                this.merge = () => {
-                    this.piece.matrix.forEach((row, y) => {
-                        row.forEach((value, x) => {
-                            if (value !== 0) this.grid[y + this.piece.pos.y][x + this.piece.pos.x] = value;
-                        });
-                    });
-                };
-                this.rotate = () => {
-                    for (let y = 0; y < this.piece.matrix.length; ++y) {
-                        for (let x = 0; x < y; ++x) {
-                            [this.piece.matrix[x][y], this.piece.matrix[y][x]] = [this.piece.matrix[y][x], this.piece.matrix[x][y]];
-                        }
-                    }
-                    this.piece.matrix.forEach(row => row.reverse());
-                };
-                this.drop = () => {
-                    this.piece.pos.y++;
-                    if (this.collide()) {
-                        this.piece.pos.y--;
-                        this.merge();
-                        this.resetPiece();
-                        this.clearLines();
-                    }
-                    this.dropCounter = 0;
-                };
-                this.clearLines = () => {
-                    outer: for (let y = this.grid.length - 1; y > 0; --y) {
-                        for (let x = 0; x < this.grid[y].length; ++x) {
-                            if (this.grid[y][x] === 0) continue outer;
-                        }
-                        const row = this.grid.splice(y, 1)[0].fill(0);
-                        this.grid.unshift(row);
-                        this.score += 10;
-                        ++y;
-                    }
-                    document.getElementById('tetris-score').innerText = this.score;
-                };
-
-                document.getElementById('tetris-start').onclick = () => {
-                    this.resetPiece();
-                    this.update();
-                };
-
-                document.addEventListener('keydown', e => {
-                    if (e.key === 'ArrowLeft') {
-                        this.piece.pos.x--;
-                        if (this.collide()) this.piece.pos.x++;
-                    }
-                    if (e.key === 'ArrowRight') {
-                        this.piece.pos.x++;
-                        if (this.collide()) this.piece.pos.x--;
-                    }
-                    if (e.key === 'ArrowDown') {
-                        this.drop();
-                    }
-                    if (e.key === 'ArrowUp') {
-                        this.rotate();
-                        if (this.collide()) this.rotate();
-                    }
-                });
-
-                this.dropCounter = 0;
-                this.lastTime = 0;
-                this.update = (time = 0) => {
-                    const deltaTime = time - this.lastTime;
-                    this.lastTime = time;
-                    this.dropCounter += deltaTime;
-                    if (this.dropCounter > 1000) this.drop();
-                    this.draw();
-                    requestAnimationFrame(this.update);
-                };
-                this.draw = () => {
-                    this.ctx.fillStyle = '#000';
-                    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-                    this.grid.forEach((row, y) => row.forEach((val, x) => {
-                        if (val) {
-                            this.ctx.fillStyle = this.colors[val];
-                            this.ctx.fillRect(x * 20, y * 20, 19, 19);
-                        }
-                    }));
-                    this.piece.matrix.forEach((row, y) => row.forEach((val, x) => {
-                        if (val) {
-                            this.ctx.fillStyle = this.colors[val];
-                            this.ctx.fillRect((x + this.piece.pos.x) * 20, (y + this.piece.pos.y) * 20, 19, 19);
-                        }
-                    }));
-                };
-            }
-        };
-
-        // --- CARDS ENGINE ---
-        const cards = {
-            current: 7,
-            streak: 0,
-            best: 0,
-            guess(higher) {
-                const next = Math.floor(Math.random() * 13) + 1;
-                const win = higher ? next >= this.current : next <= this.current;
-                if (win) {
-                    this.streak++;
-                    if (this.streak > this.best) this.best = this.streak;
-                } else {
-                    this.streak = 0;
+                if (bx > 338) {
+                    dx = -3;
+                    beep(700, .05);
                 }
-                this.current = next;
-                this.render();
-            },
-            render() {
-                const el = document.getElementById('current-card');
-                const suits = ['♠', '♣', '♥', '♦'];
-                const val = this.current > 10 ? ['J', 'Q', 'K'][this.current - 11] : (this.current === 1 ? 'A' : this.current);
-                el.innerText = suits[Math.floor(Math.random() * 4)];
-                el.setAttribute('data-value', val);
-                el.style.color = Math.random() > 0.5 ? '#ef4444' : '#1f2937';
-                document.getElementById('card-streak').innerText = this.streak;
-                document.getElementById('card-best').innerText = this.best;
-            }
-        };
+                if (bx < 0) {
+                    bx = 180;
+                    by = 110;
+                    pScore = 0;
+                }
 
-        // Init All
-        document.addEventListener('DOMContentLoaded', () => {
-            pong.init();
-            tetris.init();
-            cards.render();
+                document.getElementById("pongScore").textContent = pScore;
+                requestAnimationFrame(pongLoop);
+            }
+
+            window.startPong = function() {
+                document.getElementById("pongWrap").classList.add("play");
+                if (!pongRun) {
+                    pongRun = true;
+                    pongLoop();
+                }
+            }
+            window.pausePong = function() {
+                pongRun = false;
+            }
+            window.resetPong = function() {
+                pongRun = false;
+                bx = 180;
+                by = 110;
+                pScore = 0;
+                document.getElementById("pongScore").textContent = 0;
+                pctx.clearRect(0, 0, 360, 220);
+            }
+
+            /* ===== Tetris simple réel ===== */
+            const tet = document.getElementById("tetris");
+            const tctx = tet.getContext("2d");
+            let tx = 160,
+                ty = 0,
+                tRun = false,
+                tScore = 0;
+
+            function tetLoop() {
+                if (!tRun) return;
+                tctx.clearRect(0, 0, 360, 220);
+                tctx.fillStyle = "#5fe0ff";
+                tctx.fillRect(tx, ty, 24, 24);
+                ty += 3;
+
+                if (ty > 196) {
+                    ty = 0;
+                    tx = Math.floor(Math.random() * 14) * 24;
+                    tScore++;
+                    beep(500, .04);
+                }
+                document.getElementById("tetScore").textContent = tScore;
+                requestAnimationFrame(tetLoop);
+            }
+            window.startTetris = function() {
+                document.getElementById("tetWrap").classList.add("play");
+                if (!tRun) {
+                    tRun = true;
+                    tetLoop();
+                }
+            }
+            window.moveTet = function(v) {
+                tx = Math.max(0, Math.min(336, tx + v));
+            }
+            window.resetTetris = function() {
+                tRun = false;
+                tx = 160;
+                ty = 0;
+                tScore = 0;
+                document.getElementById("tetScore").textContent = 0;
+                tctx.clearRect(0, 0, 360, 220);
+            }
+
+            /* ===== Cards ===== */
+            let current = 7,
+                streak = 0;
+
+            function renderCard() {
+                document.getElementById("cardFace").textContent = current;
+                document.getElementById("cardScore").textContent = streak;
+            }
+            window.activateCards = function() {
+                document.getElementById("cardWrap").classList.add("play");
+            }
+            window.guessHigh = function() {
+                activateCards();
+                let n = Math.floor(Math.random() * 13) + 1;
+                streak = n >= current ? streak + 1 : 0;
+                current = n;
+                beep(800, .05);
+                renderCard();
+            }
+            window.guessLow = function() {
+                activateCards();
+                let n = Math.floor(Math.random() * 13) + 1;
+                streak = n <= current ? streak + 1 : 0;
+                current = n;
+                beep(500, .05);
+                renderCard();
+            }
+            window.resetCards = function() {
+                current = 7;
+                streak = 0;
+                renderCard();
+            }
+            renderCard();
+
         });
     </script>
 
-<script src="js/cookieconsent.js"></script>
 
-<script>
-window.addEventListener("load", function () {
-  if (window.CookieConsent) {
-    CookieConsent.run({
-      categories: {
-        necessary: { enabled: true, readOnly: true },
-        analytics: {}
-      },
-      language: {
-        default: "fr",
-        translations: {
-          fr: {
-            consentModal: {
-              title: "Cookies FF-EDA",
-              description: "Ce site utilise des cookies pour améliorer votre expérience.",
-              acceptAllBtn: "Accepter",
-              acceptNecessaryBtn: "Refuser",
-              showPreferencesBtn: "Préférences"
-            }
-          }
-        }
-      }
-    });
-  }
-});
-</script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const KEY = "ffeda_cookie_ok";
+
+            if (localStorage.getItem(KEY)) return;
+
+            const box = document.createElement("div");
+            box.id = "cookieBox";
+
+            box.innerHTML = `
+    <div style="
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:370px;
+      max-width:calc(100% - 20px);
+      background:#ffffff;
+      color:#111;
+      padding:18px;
+      border-radius:16px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      z-index:999999;
+      font-family:Arial,sans-serif;
+    ">
+      <h3 style="margin:0 0 8px 0;">Cookies RGPD</h3>
+
+      <p style="font-size:14px;line-height:1.5;margin-bottom:12px;">
+        Ce site utilise uniquement les cookies nécessaires et vos préférences locales.
+      </p>
+
+      <button id="cookieAccept" style="
+        width:100%;
+        padding:10px;
+        border:none;
+        border-radius:10px;
+        background:#111;
+        color:#fff;
+        font-weight:700;
+        cursor:pointer;
+        margin-bottom:8px;
+      ">Accepter</button>
+
+      <button id="cookieReject" style="
+        width:100%;
+        padding:10px;
+        border:none;
+        border-radius:10px;
+        background:#e8eef8;
+        color:#111;
+        font-weight:700;
+        cursor:pointer;
+      ">Refuser</button>
+    </div>
+  `;
+
+            document.body.appendChild(box);
+
+            document.getElementById("cookieAccept").onclick = function() {
+                localStorage.setItem(KEY, "yes");
+                box.remove();
+            };
+
+            document.getElementById("cookieReject").onclick = function() {
+                localStorage.setItem(KEY, "no");
+                box.remove();
+            };
+
+        });
+    </script>
+
+
+
 </body>
 
-
-
 </html>
-
